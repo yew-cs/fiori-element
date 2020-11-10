@@ -2,4 +2,3 @@
 
 This is a repository for hosting SAP Fiori Element Demo Project 
 
-This is pull request demo
