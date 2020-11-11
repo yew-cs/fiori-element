@@ -69,7 +69,7 @@
 
         </Association>
         <Association Name="FK_Product_Order">
-            <End Multiplicity="1" Role="Product" Type="SalesModel.Product"/>
+            <End Multiplicity="0..1" Role="Product" Type="SalesModel.Product"/>
             <End Multiplicity="*" Role="Order" Type="SalesModel.Order"/>
             <ReferentialConstraint>
                 <Principal Role="Product">
