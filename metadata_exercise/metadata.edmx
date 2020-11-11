@@ -44,7 +44,7 @@
 
             <EntityType Name="Order">
                 <Key>
-                    <PropertyRef Name="OrderId" />
+                    <PropertyRef Name="Id" />
                 </Key>
                 <Property Name="OrderId" Type="Edm.Int32" />
                 <Property Name="ProductID" Type="Edm.Int32" />
