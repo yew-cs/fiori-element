@@ -43,14 +43,14 @@
             </EntityType>
 
             <Association Name="FK_Supplier_Product">
-                <End Multiplicity="1" Role="Supplier" Type="SalesModel.Supplier"/>
+                <End Multiplicity="0..1" Role="Supplier" Type="SalesModel.Supplier"/>
                 <End Multiplicity="*" Role="Product" Type="SalesModel.Product"/>
                 <ReferentialConstraint>
                     <Principal Role="Supplier">
                         <PropertyRef Name="SupplierId"/>
                     </Principal>
                     <Dependent Role="Product">
-                        <PropertyRef Name="ProductID"/>
+                        <PropertyRef Name="SupplierId"/>
                     </Dependent>
                 </ReferentialConstraint>
             </Association>
@@ -76,7 +76,7 @@
                     <PropertyRef Name="ProductId"/>
                 </Principal>
                 <Dependent Role="Order">
-                    <PropertyRef Name="OrderId"/>
+                    <PropertyRef Name="ProductId"/>
                 </Dependent>
             </ReferentialConstraint>
         </Association>
