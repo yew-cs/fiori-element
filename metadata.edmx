@@ -38,6 +38,7 @@
                 <Property Name="UnitsInStock" Type="Edm.Int16" />
                 <Property Name="UnitsOnOrder" Type="Edm.Int16" />
                 <Property Name="Discontinued" Type="Edm.Boolean" />
+                 <NavigationProperty FromRole="Product" Name="Order" Relationship="SalesModel.FK_Product_Order" ToRole="Order"/>
 
             </EntityType>
 
