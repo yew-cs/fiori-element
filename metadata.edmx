@@ -25,7 +25,9 @@
             
             </EntityType>
 
-
+<EntityContainer Name="SalesEntities" m:IsDefaultEntityContainer="true" xmlns:p7="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+	<EntitySet EntityType="SalesModel.Supplier" Name="Suppliers"/>
+</EntityContainer>
 
         </Schema>
 
