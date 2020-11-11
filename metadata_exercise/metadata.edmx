@@ -22,7 +22,7 @@
                 <Property Name="Country" Type="Edm.String" MaxLength="15" />
                 <Property Name="Phone" Type="Edm.String" MaxLength="24" />
                 <Property Name="Website" Type="Edm.String" />
-                <NavigationProperty FromRole="Supplier" Name="ToProducts" Relationship="SalesModel.FK_Supplier_Product" ToRole="Product"/>
+                <NavigationProperty FromRole="Supplier" Name="Products" Relationship="SalesModel.FK_Supplier_Product" ToRole="Product"/>
 
             </EntityType>
 
@@ -38,7 +38,7 @@
                 <Property Name="UnitsInStock" Type="Edm.Int16" />
                 <Property Name="UnitsOnOrder" Type="Edm.Int16" />
                 <Property Name="Discontinued" Type="Edm.Boolean" />
-                <NavigationProperty FromRole="Product" Name="ToOrders" Relationship="SalesModel.FK_Product_Order" ToRole="Order"/>
+                <NavigationProperty FromRole="Product" Name="Orders" Relationship="SalesModel.FK_Product_Order" ToRole="Order"/>
 
             </EntityType>
 
@@ -67,40 +67,38 @@
                 </ReferentialConstraint>
             </Association>
 
-        </Association>
-        <Association Name="FK_Product_Order">
-            <End Multiplicity="0..1" Role="Product" Type="SalesModel.Product"/>
-            <End Multiplicity="*" Role="Order" Type="SalesModel.Order"/>
-            <ReferentialConstraint>
-                <Principal Role="Product">
-                    <PropertyRef Name="Id"/>
-                </Principal>
-                <Dependent Role="Order">
-                    <PropertyRef Name="ProductID"/>
-                </Dependent>
-            </ReferentialConstraint>
-        </Association>
+            <Association Name="FK_Product_Order">
+                <End Multiplicity="0..1" Role="Product" Type="SalesModel.Product"/>
+                <End Multiplicity="*" Role="Order" Type="SalesModel.Order"/>
+                <ReferentialConstraint>
+                    <Principal Role="Product">
+                        <PropertyRef Name="Id"/>
+                    </Principal>
+                    <Dependent Role="Order">
+                        <PropertyRef Name="ProductID"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
 
 
 
-        <EntityContainer Name="SalesEntities" m:IsDefaultEntityContainer="true"
-            xmlns:p7="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
-            <EntitySet EntityType="SalesModel.Supplier" Name="Suppliers"/>
-            <EntitySet EntityType="SalesModel.Product" Name="Products"/>
-            <EntitySet EntityType="SalesModel.Order" Name="Orders" />
-            <AssociationSet Association="SalesModel.FK_Supplier_Product" Name="S_TO_P_AssocSet">
-                <End EntitySet="Suppliers" Role="Supplier"/>
-                <End EntitySet="Products" Role="Product"/> 
-            </AssociationSet>
-            <AssociationSet Association="SalesModel.FK_Product_Order" Name="P_TO_O_AssocSet">
-                <End EntitySet="Products" Role="Product" />
-                <End EntitySet="Orders" Role="Order" />
-                
-            </AssociationSet>
-        </EntityContainer>
+            <EntityContainer Name="SalesEntities" m:IsDefaultEntityContainer="true"
+                xmlns:p7="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+                <EntitySet EntityType="SalesModel.Supplier" Name="Suppliers"/>
+                <EntitySet EntityType="SalesModel.Product" Name="Products"/>
+                <EntitySet EntityType="SalesModel.Order" Name="Orders" />
+                <AssociationSet Association="SalesModel.FK_Supplier_Product" Name="S_TO_P_AssocSet">
+                    <End EntitySet="Products" Role="Product"/>
+                    <End EntitySet="Suppliers" Role="Supplier"/>
+                </AssociationSet>
+                <AssociationSet Association="SalesModel.FK_Product_Order" Name="P_TO_O_AssocSet">
+                    <End EntitySet="Orders" Role="Order" />
+                    <End EntitySet="Products" Role="Product" />
+                </AssociationSet>
+            </EntityContainer>
 
 
-    </Schema>
+        </Schema>
 
-</edmx:DataServices>
+    </edmx:DataServices>
 </edmx:Edmx>
