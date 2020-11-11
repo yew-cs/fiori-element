@@ -66,7 +66,7 @@
                 <Annotation Term="UI.LineItem">
                     <Collection>
                         <Record Type="UI.DataField">
-                        <PropertyValue Property="Value" String="ID" />
+                        <PropertyValue Property="Value" Path="ID" />
                             <PropertyValue Property="Label" String="Sales ID"/>
                         </Record>
                         <Record Type="UI.DataField">
