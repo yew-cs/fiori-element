@@ -5,6 +5,12 @@
         xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
         <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
     </edmx:Reference>
+
+ <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Capabilities.V1.xml"
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Capbilities"/>
+    </edmx:Reference>
+
     <edmx:Reference Uri="https://sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value"
         xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
         <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
@@ -130,13 +136,42 @@
                             <PropertyValue Property="Label" String="Phone"/>
                         </Record>
 
-
-
-
                     </Collection>
 
                 </Annotation>
             </Annotations>
+            
+             <Annotations Target="SalesModel.Supplier/Name" 
+                xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation String="Company" Term="Common.Label">
+                </Annotation>
+            </Annotations>
+
+            <Annotations Target="SalesModel.Supplier/Category" 
+                xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation String="Category" Term="Common.Label">
+                </Annotation>
+            </Annotations>
+
+            <Annotations Target="SalesModel.Supplier/City" 
+                xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation String="City" Term="Common.Label">
+                </Annotation>
+            </Annotations>
+
+            <Annotations Target="SalesModel.Supplier/Country" 
+                xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation String="Country" Term="Common.Label">
+                </Annotation>
+            </Annotations>
+
+            <Annotations Target="SalesModel.Supplier/Phone" 
+                xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation String="Phone" Term="Common.Label">
+                </Annotation>
+            </Annotations>
+
+
 
 
         </Schema>
