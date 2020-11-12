@@ -40,6 +40,24 @@
 
             </EntityType>
 
+            <EntityType Name="Supplier">
+
+                <Key>
+                    <PropertyRef Name="Id"/>
+                </Key>
+                <Property Name="Id" Type="Edm.Int32" />
+                <Property Name="Name" Type="Edm.String" MaxLength="40" />
+                <Property Name="Category" Type="Edm.String" MaxLength="20" />
+                <Property Name="Address" Type="Edm.String" MaxLength="50" />
+                <Property Name="City" Type="Edm.String" MaxLength="15" />
+                <Property Name="PostalCode" Type="Edm.Decimal" MaxLength="10" />
+                <Property Name="Country" Type="Edm.String" MaxLength="15" />
+                <Property Name="Phone" Type="Edm.String" MaxLength="24" />
+                <Property Name="Website" Type="Edm.String" />
+                <NavigationProperty FromRole="Supplier" Name="ToProducts" Relationship="SalesModel.FK_Supplier_Product" ToRole="Product"/>
+
+            </EntityType>
+
             <EntityType Name="Product">
                 <Key>
                     <PropertyRef Name="Id" />
@@ -66,6 +84,16 @@
                 <Property Name="OrderDate" Type="Edm.DateTime" />
                 <Property Name="ShippedDate" Type="Edm.DateTime" />
                 <Property Name="ShipVia" Type="Edm.String" MaxLength="15" />
+            </EntityType>
+
+            <EntityType Name="VH_Country">
+
+                <Key>
+                    <PropertyRef Name="Code"/>
+                </Key>
+                <Property Name="Code" Type="Edm.String" MaxLength="5" />
+                <Property Name="Text" Type="Edm.String" MaxLength="20" />
+               
             </EntityType>
 
             <Association Name="FK_Supplier_Product">
