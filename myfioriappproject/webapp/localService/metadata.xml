@@ -6,9 +6,9 @@
         <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
     </edmx:Reference>
 
- <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Capabilities.V1.xml"
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Capabilities.V1.xml"
         xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
-        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Capbilities"/>
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
     </edmx:Reference>
 
     <edmx:Reference Uri="https://sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value"
@@ -141,39 +141,52 @@
                 </Annotation>
             </Annotations>
             
-             <Annotations Target="SalesModel.Supplier/Name" 
+            <Annotations Target="SalesModel.Supplier/Name"
                 xmlns="http://docs.oasis-open.org/odata/ns/edm">
-                <Annotation String="Company" Term="Common.Label">
-                </Annotation>
+                <Annotation Term="Common.Label" String="Company" />
+            </Annotations>
+            <Annotations Target="SalesModel.Supplier/Category"
+                xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="Category" />
+            </Annotations>
+            <Annotations Target="SalesModel.Supplier/City"
+                xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="City" />
+            </Annotations>
+            <Annotations Target="SalesModel.Supplier/Country"
+                xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="Country" />
+            </Annotations>
+            <Annotations Target="SalesModel.Supplier/Phone"
+                xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="Phone" />
             </Annotations>
 
-            <Annotations Target="SalesModel.Supplier/Category" 
+             <Annotations Target="SalesModel.SalesEntities/Suppliers"
                 xmlns="http://docs.oasis-open.org/odata/ns/edm">
-                <Annotation String="Category" Term="Common.Label">
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
                 </Annotation>
             </Annotations>
-
-            <Annotations Target="SalesModel.Supplier/City" 
+            <Annotations Target="SalesModel.SalesEntities/Suppliers"
                 xmlns="http://docs.oasis-open.org/odata/ns/edm">
-                <Annotation String="City" Term="Common.Label">
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
                 </Annotation>
             </Annotations>
-
-            <Annotations Target="SalesModel.Supplier/Country" 
+            <Annotations Target="SalesModel.SalesEntities/Suppliers"
                 xmlns="http://docs.oasis-open.org/odata/ns/edm">
-                <Annotation String="Country" Term="Common.Label">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
                 </Annotation>
             </Annotations>
-
-            <Annotations Target="SalesModel.Supplier/Phone" 
-                xmlns="http://docs.oasis-open.org/odata/ns/edm">
-                <Annotation String="Phone" Term="Common.Label">
-                </Annotation>
-            </Annotations>
-
-
-
-
+            
         </Schema>
 
     </edmx:DataServices>
