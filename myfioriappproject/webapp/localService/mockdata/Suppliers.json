@@ -5,7 +5,7 @@
             "type": "NorthwindModel.Supplier"
         },
         "Id": 1,
-        "CompanyName": "Exotic Liquids",
+        "Name": "Exotic Liquids",
         "Category": "Manufacturing",
         "ContactName": "Charlotte Cooper",
         "ContactTitle": "Purchasing Manager",
@@ -29,7 +29,7 @@
             "type": "NorthwindModel.Supplier"
         },
         "Id": 2,
-        "CompanyName": "New Orleans Cajun Delights",
+        "Name": "New Orleans Cajun Delights",
         "Category": "Food & Beverage",
         "ContactName": "Shelley Burke",
         "ContactTitle": "Order Administrator",
@@ -53,7 +53,7 @@
             "type": "NorthwindModel.Supplier"
         },
         "Id": 3,
-        "CompanyName": "Grandma Kelly's Homestead",
+        "Name": "Grandma Kelly's Homestead",
         "Category": "Manufacturing",
         "ContactName": "Regina Murphy",
         "ContactTitle": "Sales Representative",
@@ -77,7 +77,7 @@
             "type": "NorthwindModel.Supplier"
         },
         "Id": 4,
-        "CompanyName": "Tokyo Traders",
+        "Name": "Tokyo Traders",
         "Category": "Transportation",
         "ContactName": "Yoshi Nagase",
         "ContactTitle": "Marketing Manager",
@@ -101,7 +101,7 @@
             "type": "NorthwindModel.Supplier"
         },
         "Id": 5,
-        "CompanyName": "Cooperativa de Quesos 'Las Cabras'",
+        "Name": "Cooperativa de Quesos 'Las Cabras'",
         "Category": "Food & Beverage",
         "ContactName": "Antonio del Valle Saavedra",
         "ContactTitle": "Export Administrator",
