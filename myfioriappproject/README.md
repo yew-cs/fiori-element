@@ -11,7 +11,7 @@
 |**Navigation Entity**<br>ToProducts|
 |**Module Name**<br>myfioriappproject|
 |**Application Title**<br>Manage Suppliers |
-|**Namespace**<br>Namespace1|
+|**Namespace**<br>com.rizing|
 |**UI5 Theme**<br>sap_fiori_3|
 |**UI5 Version**<br>Latest |
 |**Enable Telemetry**<br>True |

@@ -1,7 +1,7 @@
 sap.ui.define(['sap/ui/core/util/MockServer'], function(MockServer) {
     'use strict';
     var oMockServer,
-        _sAppModulePath = 'Namespace1.myfioriapp/',
+        _sAppModulePath = 'com.rizing.myfioriapp/',
         _sJsonFilesModulePath = _sAppModulePath + 'localService/mockdata';
 
     return {
