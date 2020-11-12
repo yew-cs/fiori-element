@@ -34,25 +34,7 @@
                 <Property Name="City" Type="Edm.String" MaxLength="15" />
                 <Property Name="PostalCode" Type="Edm.Decimal" MaxLength="10" />
                 <Property Name="Country" Type="Edm.String" MaxLength="15" />
-                 <Property Name="CountryId" Type="Edm.String" MaxLength="5" />
-                <Property Name="Phone" Type="Edm.String" MaxLength="24" />
-                <Property Name="Website" Type="Edm.String" />
-                <NavigationProperty FromRole="Supplier" Name="ToProducts" Relationship="SalesModel.FK_Supplier_Product" ToRole="Product"/>
-
-            </EntityType>
-
-            <EntityType Name="Supplier">
-
-                <Key>
-                    <PropertyRef Name="Id"/>
-                </Key>
-                <Property Name="Id" Type="Edm.Int32" />
-                <Property Name="Name" Type="Edm.String" MaxLength="40" />
-                <Property Name="Category" Type="Edm.String" MaxLength="20" />
-                <Property Name="Address" Type="Edm.String" MaxLength="50" />
-                <Property Name="City" Type="Edm.String" MaxLength="15" />
-                <Property Name="PostalCode" Type="Edm.Decimal" MaxLength="10" />
-                <Property Name="Country" Type="Edm.String" MaxLength="15" />
+                <Property Name="CountryId" Type="Edm.String" MaxLength="5" />
                 <Property Name="Phone" Type="Edm.String" MaxLength="24" />
                 <Property Name="Website" Type="Edm.String" />
                 <NavigationProperty FromRole="Supplier" Name="ToProducts" Relationship="SalesModel.FK_Supplier_Product" ToRole="Product"/>
@@ -94,7 +76,7 @@
                 </Key>
                 <Property Name="Code" Type="Edm.String" MaxLength="5" />
                 <Property Name="Text" Type="Edm.String" MaxLength="20" />
-               
+
             </EntityType>
 
             <Association Name="FK_Supplier_Product">
@@ -128,6 +110,7 @@
                 xmlns:p7="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
                 <EntitySet EntityType="SalesModel.Supplier" Name="Suppliers"/>
                 <EntitySet EntityType="SalesModel.Product" Name="Products"/>
+                <EntitySet EntityType="SalesModel.VH_Country" Name="VH_Countries"/>
                 <EntitySet EntityType="SalesModel.Order" Name="Orders" />
                 <AssociationSet Association="SalesModel.FK_Supplier_Product" Name="S_TO_P_AssocSet">
                     <End EntitySet="Suppliers" Role="Supplier"/>
@@ -168,8 +151,21 @@
                     </Collection>
 
                 </Annotation>
+
+
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>CountryId</PropertyPath>
+                    </Collection>
+
+                </Annotation>
+
+
+
             </Annotations>
-            
+
+
+
             <Annotations Target="SalesModel.Supplier/Name"
                 xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Common.Label" String="Company" />
@@ -191,7 +187,7 @@
                 <Annotation Term="Common.Label" String="Phone" />
             </Annotations>
 
-             <Annotations Target="SalesModel.SalesEntities/Suppliers"
+            <Annotations Target="SalesModel.SalesEntities/Suppliers"
                 xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Capabilities.InsertRestrictions">
                     <Record Type="Capabilities.InsertRestrictionsType">
@@ -215,7 +211,27 @@
                     </Record>
                 </Annotation>
             </Annotations>
-            
+
+            <Annotations Target="SalesModel.Supplier/CountryId"
+                xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="CollectionPath" String="VH_Countries"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="CountryId"/>
+                                    <PropertyValue Property="ValueListProperty" String="Text"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues" Bool="true" />
+
+            </Annotations>
+
         </Schema>
 
     </edmx:DataServices>
