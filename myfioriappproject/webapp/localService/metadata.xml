@@ -222,14 +222,24 @@
                             <Collection>
                                 <Record Type="Common.ValueListParameterInOut">
                                     <PropertyValue Property="LocalDataProperty" PropertyPath="CountryId"/>
+                                    <PropertyValue Property="ValueListProperty" String="Code"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
                                     <PropertyValue Property="ValueListProperty" String="Text"/>
                                 </Record>
+
                             </Collection>
                         </PropertyValue>
                     </Record>
                 </Annotation>
                 <Annotation Term="Common.ValueListWithFixedValues" Bool="true" />
 
+            </Annotations>
+
+            <Annotations Target="SalesModel.VH_Country/Code"
+                xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                 <Annotation Term="Common.Text" Path="Text">
+                </Annotation>
             </Annotations>
 
         </Schema>
