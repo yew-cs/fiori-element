@@ -17,7 +17,7 @@
         "CountryId": "UK",
         "Phone": "(171) 555-2222",
         "Fax": null,
-        "LogoPath": "/images/logo/logo1.png",
+        "LogoPath": "/images/logo/logo1.jpg",
         "Website": "www.google.com",
         "Products": {
             "__deferred": {

@@ -24,9 +24,8 @@
         <Schema Namespace="SalesModel"
             xmlns="http://schemas.microsoft.com/ado/2008/09/edm"
             xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices"
-            xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
-            >
-            
+            xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+
 
             <EntityType Name="Supplier">
 
@@ -172,7 +171,7 @@
                     <Record Type="UI.HeaderInfoType">
                         <PropertyValue Property="TypeName" String="Supplier" />
                         <PropertyValue Property="TypeNamePlural" String="Suppliers"/>
-                         <PropertyValue Property="TypeImageUrl" Path="LogoPath" ></PropertyValue>
+                        <PropertyValue Property="TypeImageUrl" Path="LogoPath"></PropertyValue>
                         <PropertyValue Property="Title">
 
                             <Record Type="UI.DataField">
@@ -186,7 +185,7 @@
 
                             </Record>
                         </PropertyValue>
-                       
+
 
                     </Record>
 
@@ -202,22 +201,22 @@
                                 </Record>
                                 <Record Type="UI.DataField">
                                     <PropertyValue Property="Value" Path="Website"/>
-                                    
+
                                 </Record>
                             </Collection>
                         </PropertyValue>
-                        
+
                     </Record>
                 </Annotation>
 
-                  <Annotation Term="UI.HeaderFacets" >
-       <Collection>
-           <Record Type="UI.ReferenceFacet">
-               <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup"/>
-               <PropertyValue Property="Label" String="General Information"/>
-           </Record>
-       </Collection>
-   </Annotation>
+                <Annotation Term="UI.HeaderFacets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup"/>
+                            <PropertyValue Property="Label" String="General Information"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
 
             </Annotations>
 
@@ -226,6 +225,10 @@
             <Annotations Target="SalesModel.Supplier/Name"
                 xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Common.Label" String="Company" />
+            </Annotations>
+            <Annotations Target="SalesModel.Supplier/Website"
+                xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="Website" />
             </Annotations>
             <Annotations Target="SalesModel.Supplier/Category"
                 xmlns="http://docs.oasis-open.org/odata/ns/edm">
@@ -242,6 +245,10 @@
             <Annotations Target="SalesModel.Supplier/Phone"
                 xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Common.Label" String="Phone" />
+            </Annotations>
+              <Annotations Target="SalesModel.Supplier/CountryId"
+                xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="Country" />
             </Annotations>
 
             <Annotations Target="SalesModel.SalesEntities/Suppliers"
@@ -303,7 +310,6 @@
 
             <Annotations Target="SalesModel.Supplier/LogoPath">
                 <Annotation Term="UI.IsImageURL" />
-                <Annotation Term="Common.Label" String="Logo" />
             </Annotations>
         </Schema>
 
