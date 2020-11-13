@@ -308,7 +308,8 @@
                 </Annotation>
             </Annotations>
 
-            <Annotations Target="SalesModel.Supplier/LogoPath">
+            <Annotations Target="SalesModel.Supplier/LogoPath"
+            xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="UI.IsImageURL" />
             </Annotations>
         </Schema>
