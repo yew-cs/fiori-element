@@ -38,7 +38,6 @@
                 <Property Name="Phone" Type="Edm.String" MaxLength="24" />
                 <Property Name="Website" Type="Edm.String" />
                 <Property Name="LogoPath" Type="Edm.String" MaxLength="255" />
-
                 <NavigationProperty FromRole="Supplier" Name="ToProducts" Relationship="SalesModel.FK_Supplier_Product" ToRole="Product"/>
 
             </EntityType>
@@ -129,6 +128,11 @@
                 xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="UI.LineItem">
                     <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="LogoPath"/>
+                            <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
+                            <PropertyValue Property="Label" String="Logo"/>
+                        </Record>
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="Name" />
                             <PropertyValue Property="Label" String="Company"/>
@@ -224,8 +228,10 @@
                 <Annotation Term="Common.ValueList">
                     <Record>
                         <PropertyValue Property="CollectionPath" String="VH_Countries"/>
+                        <PropertyValue Property="Label" String="Country"/>
                         <PropertyValue Property="SearchSupported" Bool="true"/>
                         <PropertyValue Property="Parameters">
+
                             <Collection>
                                 <Record Type="Common.ValueListParameterInOut">
                                     <PropertyValue Property="LocalDataProperty" PropertyPath="CountryId"/>
@@ -249,9 +255,10 @@
                 </Annotation>
             </Annotations>
 
-
-
-
+            <Annotations Target="SalesModel.Supplier/LogoPath">
+                <Annotation Term="UI.IsImageURL" />
+                <Annotation Term="Common.Label" String="Logo" />
+            </Annotations>
         </Schema>
 
     </edmx:DataServices>
