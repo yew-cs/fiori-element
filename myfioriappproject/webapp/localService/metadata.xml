@@ -51,7 +51,7 @@
                 <Key>
                     <PropertyRef Name="Id" />
                 </Key>
-                <Property Name="ProductId" Type="Edm.Int32" />
+                <Property Name="Id" Type="Edm.Int32" />
                 <Property Name="Name" Type="Edm.String" MaxLength="40" />
                 <Property Name="SupplierID" Type="Edm.Int32" />
                 <Property Name="QuantityPerUnit" Type="Edm.String" MaxLength="20" />
@@ -67,7 +67,7 @@
                 <Key>
                     <PropertyRef Name="Id" />
                 </Key>
-                <Property Name="OrderId" Type="Edm.Int32" />
+                <Property Name="Id" Type="Edm.Int32" />
                 <Property Name="ProductID" Type="Edm.Int32" />
                 <Property Name="CustomerName" Type="Edm.String" MaxLength="40" />
                 <Property Name="OrderDate" Type="Edm.DateTime" />
@@ -182,13 +182,9 @@
                         <PropertyValue Property="Description">
                             <Record Type="UI.DataField">
                                 <PropertyValue Property="Value" Path="Id"/>
-
                             </Record>
                         </PropertyValue>
-
-
                     </Record>
-
                 </Annotation>
 
                 <Annotation Term="UI.FieldGroup">
@@ -217,8 +213,53 @@
                         </Record>
                     </Collection>
                 </Annotation>
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Target" AnnotationPath="ToProducts/@UI.LineItem"/>
+                            <PropertyValue Property="Label" String="Product List"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
 
             </Annotations>
+
+
+            <Annotations Target="SalesModel.Product"
+                xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Name" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="QuantityPerUnit" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="Discontinued" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="UnitPrice" />
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="UnitsInStock" />
+                        </Record>
+                    </Collection>
+                </Annotation>
+
+                <Annotation Term="UI.HeaderInfo">
+                    <Record Type="UI.HeaderInfoType">
+                        <PropertyValue Property="TypeName" String="Product List" />
+                        <PropertyValue Property="TypeNamePlural" String="Product Lists"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="Id"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+
 
 
 
@@ -246,7 +287,7 @@
                 xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Common.Label" String="Phone" />
             </Annotations>
-              <Annotations Target="SalesModel.Supplier/CountryId"
+            <Annotations Target="SalesModel.Supplier/CountryId"
                 xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Common.Label" String="Country" />
             </Annotations>
@@ -309,7 +350,7 @@
             </Annotations>
 
             <Annotations Target="SalesModel.Supplier/LogoPath"
-            xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="UI.IsImageURL" />
             </Annotations>
         </Schema>
