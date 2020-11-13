@@ -110,7 +110,7 @@
                 </ReferentialConstraint>
             </Association>
 
-
+            <!-- Entity Container -->
 
             <EntityContainer Name="SalesEntities" m:IsDefaultEntityContainer="true"
                 xmlns:p7="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
@@ -128,6 +128,8 @@
 
                 </AssociationSet>
             </EntityContainer>
+
+            <!-- Annotation for Supplier -->
 
             <Annotations Target="SalesModel.Supplier"
                 xmlns="http://docs.oasis-open.org/odata/ns/edm">
@@ -216,6 +218,8 @@
                 </Annotation>
             </Annotations>
 
+            <!-- Annotation for Products -->
+
             <Annotations Target="SalesModel.Product"
                 xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="UI.LineItem">
@@ -239,7 +243,7 @@
                 </Annotation>
             </Annotations>
 
-
+            <!-- Add Label to Supplier table column  -->
 
             <Annotations Target="SalesModel.Supplier/Name"
                 xmlns="http://docs.oasis-open.org/odata/ns/edm">
@@ -270,6 +274,8 @@
                 <Annotation Term="Common.Label" String="Country" />
             </Annotations>
 
+            <!-- Disabled the Create, Update and Delete features for Suppliers  -->
+
             <Annotations Target="SalesModel.SalesEntities/Suppliers"
                 xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Capabilities.InsertRestrictions">
@@ -294,6 +300,35 @@
                     </Record>
                 </Annotation>
             </Annotations>
+
+             <!-- Disabled the Create, Update and Delete features for Products  -->
+
+            <Annotations Target="SalesModel.SalesEntities/Products"
+                xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.InsertRestrictions">
+                    <Record Type="Capabilities.InsertRestrictionsType">
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SalesModel.SalesEntities/Products"
+                xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.UpdateRestrictions">
+                    <Record Type="Capabilities.UpdateRestrictionsType">
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SalesModel.SalesEntities/Products"
+                xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.DeleteRestrictions">
+                    <Record Type="Capabilities.DeleteRestrictionsType">
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+
+            <!-- Annotation for CountryId for ValueList -->
 
             <Annotations Target="SalesModel.Supplier/CountryId"
                 xmlns="http://docs.oasis-open.org/odata/ns/edm">
@@ -321,16 +356,22 @@
 
             </Annotations>
 
+            <!-- Annotation for VH_Country Code  -->
+
             <Annotations Target="SalesModel.VH_Country/Code"
                 xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Common.Text" Path="Text">
                 </Annotation>
             </Annotations>
 
+            <!-- Annotation for LogoPath  -->
+
             <Annotations Target="SalesModel.Supplier/LogoPath"
                 xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="UI.IsImageURL" />
             </Annotations>
+
+            <!-- Add Label to Product table column  -->
 
             <Annotations Target="SalesModel.Product/Name"
                 xmlns="http://docs.oasis-open.org/odata/ns/edm">
