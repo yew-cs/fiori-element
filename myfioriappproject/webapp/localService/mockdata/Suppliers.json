@@ -18,7 +18,7 @@
         "Phone": "(171) 555-2222",
         "Fax": null,
         "LogoPath": "/images/logo/logo1.jpg",
-        "Website": "www.google.com",
+        "Website": "https://www.google.com/",
         "Products": {
             "__deferred": {
                 "uri": "https://services.odata.org/V2/Northwind/Northwind.svc/Suppliers(1)/Products"
@@ -44,7 +44,7 @@
         "Phone": "(100) 555-4822",
         "Fax": null,
         "LogoPath": "/images/logo/logo2.jpg",
-        "Website": "www.google.com",
+        "Website": "https://www.google.com/",
         "Products": {
             "__deferred": {
                 "uri": "https://services.odata.org/V2/Northwind/Northwind.svc/Suppliers(2)/Products"
@@ -62,7 +62,7 @@
         "ContactName": "Regina Murphy",
         "ContactTitle": "Sales Representative",
         "Address": "707 Oxford Rd.",
-        "City": "Ann Arbor",
+        "City": "Tokyo",
         "Region": "MI",
         "PostalCode": "48104",
         "Country": "Japan",
@@ -70,7 +70,7 @@
         "Phone": "(313) 555-5735",
         "Fax": "(313) 555-3349",
         "LogoPath": "/images/logo/logo3.png",
-        "Website": "www.google.com",
+        "Website": "https://www.google.com/",
         "Products": {
             "__deferred": {
                 "uri": "https://services.odata.org/V2/Northwind/Northwind.svc/Suppliers(3)/Products"
@@ -88,7 +88,7 @@
         "ContactName": "Yoshi Nagase",
         "ContactTitle": "Marketing Manager",
         "Address": "9-8 Sekimai Musashino-shi",
-        "City": "Tokyo",
+        "City": "Kuala Lumpur",
         "Region": null,
         "PostalCode": "100",
         "Country": "Malaysia",
@@ -96,7 +96,7 @@
         "Phone": "(03) 3555-5011",
         "Fax": null,
         "LogoPath": "/images/logo/logo4.png",
-        "Website": "www.google.com",
+        "Website": "https://www.google.com/",
         "Products": {
             "__deferred": {
                 "uri": "https://services.odata.org/V2/Northwind/Northwind.svc/Suppliers(4)/Products"
@@ -122,7 +122,7 @@
         "Phone": "(98) 598 76 54",
         "Fax": null,
         "LogoPath": "/images/logo/logo5.jpg",
-        "Website": "www.google.com",
+        "Website": "https://www.google.com/",
         "Products": {
             "__deferred": {
                 "uri": "https://services.odata.org/V2/Northwind/Northwind.svc/Suppliers(5)/Products"
