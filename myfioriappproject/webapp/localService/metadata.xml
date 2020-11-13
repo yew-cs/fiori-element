@@ -6,6 +6,10 @@
         <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
     </edmx:Reference>
 
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Communication.xml"
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
     <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Capabilities.V1.xml"
         xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
         <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
@@ -20,7 +24,9 @@
         <Schema Namespace="SalesModel"
             xmlns="http://schemas.microsoft.com/ado/2008/09/edm"
             xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices"
-            xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+            xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+            >
+            
 
             <EntityType Name="Supplier">
 
@@ -166,13 +172,53 @@
                     <Record Type="UI.HeaderInfoType">
                         <PropertyValue Property="TypeName" String="Supplier" />
                         <PropertyValue Property="TypeNamePlural" String="Suppliers"/>
+                         <PropertyValue Property="TypeImageUrl" Path="LogoPath" ></PropertyValue>
                         <PropertyValue Property="Title">
+
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="Name"/>
+                            </Record>
+
+                        </PropertyValue>
+                        <PropertyValue Property="Description">
                             <Record Type="UI.DataField">
                                 <PropertyValue Property="Value" Path="Id"/>
+
                             </Record>
                         </PropertyValue>
+                       
+
+                    </Record>
+
+                </Annotation>
+
+                <Annotation Term="UI.FieldGroup">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="Category"/>
+                                    <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/Low"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="Website"/>
+                                    
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        
                     </Record>
                 </Annotation>
+
+                  <Annotation Term="UI.HeaderFacets" >
+       <Collection>
+           <Record Type="UI.ReferenceFacet">
+               <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup"/>
+               <PropertyValue Property="Label" String="General Information"/>
+           </Record>
+       </Collection>
+   </Annotation>
+
             </Annotations>
 
 
