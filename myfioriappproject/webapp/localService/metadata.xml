@@ -51,7 +51,7 @@
                 <Property Name="LogoPath" Type="Edm.String" MaxLength="255" />
                 <Property Name="ContactPersonId" Type="Edm.Int32" />
                 <NavigationProperty FromRole="Supplier" Name="ToProducts" Relationship="SalesModel.FK_Supplier_Product" ToRole="Product"/>
-                <NavigationProperty FromRole="Supplier" Name="ToContactPerson" Relationship="SalesModel.FK_Supplier_ContactPerson" ToRole="ContactPerson"/>
+                <NavigationProperty FromRole="Supplier" Name="ToContactPersons" Relationship="SalesModel.FK_Supplier_ContactPerson" ToRole="ContactPerson"/>
             </EntityType>
 
             <!-- Entity:Product  -->
@@ -142,8 +142,8 @@
             <!-- Association :Supplier/ContactPerson -->
 
             <Association Name="FK_Supplier_ContactPerson">
-                <End Multiplicity="0..1" Role="Product" Type="SalesModel.Supplier"/>
-                <End Multiplicity="*" Role="Order" Type="SalesModel.ContactPerson"/>
+                <End Multiplicity="0..1" Role="Supplier" Type="SalesModel.Supplier"/>
+                <End Multiplicity="*" Role="ContactPerson" Type="SalesModel.ContactPerson"/>
                 <ReferentialConstraint>
                     <Principal Role="Supplier">
                         <PropertyRef Name="Id"/>
@@ -193,6 +193,11 @@
                         </Record>
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="Category" />
+                        </Record>
+                        <Record Type="UI.DataFieldForAnnotation">
+                            <PropertyValue Property="Label" String="Contact Name" />
+                            <!-- <PropertyValue Property="Value" Path="ContactName" /> -->
+                            <PropertyValue Property="Target" AnnotationPath="ToContactPersons/@Communication.Contact" />
                         </Record>
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="Country" />
@@ -304,6 +309,30 @@
                             <Record Type="UI.DataField">
                                 <PropertyValue Property="Value" Path="Id"/>
                             </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+
+            <Annotations Target="SalesModel.ContactPerson">
+                <Annotation Term="Communication.Contact">
+                    <Record>
+                        <PropertyValue Property="fn" Path="Name" />
+                        <PropertyValue Property="tel">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="type" EnumMember="Communication.PhoneType/preferred Communication.PhoneType/work" />
+                                    <PropertyValue Property="uri" Path="Phone" />
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="email">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="type" EnumMember="Communication.ContactInformationType/work Communication.ContactInformationType/preferred" />
+                                    <PropertyValue Property="address" Path="Email" />
+                                </Record>
+                            </Collection>
                         </PropertyValue>
                     </Record>
                 </Annotation>
