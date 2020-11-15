@@ -19,6 +19,7 @@
         "Fax": null,
         "LogoPath": "/images/logo/logo1.jpg",
         "Website": "https://www.google.com/",
+        "ContactPersonId": "101",
         "Products": {
             "__deferred": {
                 "uri": "https://services.odata.org/V2/Northwind/Northwind.svc/Suppliers(1)/Products"
@@ -45,6 +46,7 @@
         "Fax": null,
         "LogoPath": "/images/logo/logo2.jpg",
         "Website": "https://www.google.com/",
+        "ContactPersonId": "102",
         "Products": {
             "__deferred": {
                 "uri": "https://services.odata.org/V2/Northwind/Northwind.svc/Suppliers(2)/Products"
@@ -71,6 +73,7 @@
         "Fax": "(313) 555-3349",
         "LogoPath": "/images/logo/logo3.png",
         "Website": "https://www.google.com/",
+        "ContactPersonId": "103",
         "Products": {
             "__deferred": {
                 "uri": "https://services.odata.org/V2/Northwind/Northwind.svc/Suppliers(3)/Products"
@@ -97,6 +100,7 @@
         "Fax": null,
         "LogoPath": "/images/logo/logo4.png",
         "Website": "https://www.google.com/",
+        "ContactPersonId": "104",
         "Products": {
             "__deferred": {
                 "uri": "https://services.odata.org/V2/Northwind/Northwind.svc/Suppliers(4)/Products"
@@ -123,6 +127,7 @@
         "Fax": null,
         "LogoPath": "/images/logo/logo5.jpg",
         "Website": "https://www.google.com/",
+        "ContactPersonId": "105",
         "Products": {
             "__deferred": {
                 "uri": "https://services.odata.org/V2/Northwind/Northwind.svc/Suppliers(5)/Products"
