@@ -10,9 +10,15 @@
         xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
         <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
     </edmx:Reference>
+
     <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Capabilities.V1.xml"
         xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
         <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+
+    <edmx:Reference Uri="https://oasis-tcs.github.io/odata-vocabularies/vocabularies/Org.OData.Measures.V1.xml"
+        xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
     </edmx:Reference>
 
     <edmx:Reference Uri="https://sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value"
@@ -79,7 +85,7 @@
                 <Property Name="ShipVia" Type="Edm.String" MaxLength="15" />
             </EntityType>
 
-  <!-- Entity:VH_Country  -->
+            <!-- Entity:VH_Country  -->
             <EntityType Name="VH_Country">
                 <Key>
                     <PropertyRef Name="Code"/>
@@ -419,6 +425,13 @@
             <Annotations Target="SalesModel.Product/QuantityPerUnit"
                 xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Common.Label" String="Quantity Per Unit" />
+            </Annotations>
+
+            <!-- Annotation for Currency Key for UnitPrice  -->
+
+            <Annotations Target="SalesModel.Product/UnitPrice"
+                xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Measures.ISOCurrency" Path="CurrencyKey" />
             </Annotations>
         </Schema>
 
