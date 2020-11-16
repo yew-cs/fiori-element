@@ -237,7 +237,7 @@
                     </Record>
                 </Annotation>
 
-                <Annotation Term="UI.FieldGroup">
+                <Annotation Term="UI.FieldGroup" Qualifier="GeneralInformationForHeader">
                     <Record>
                         <PropertyValue Property="Data">
                             <Collection>
@@ -256,7 +256,7 @@
                 <Annotation Term="UI.HeaderFacets">
                     <Collection>
                         <Record Type="UI.ReferenceFacet">
-                            <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#GeneralInformationForHeader"/>
                             <PropertyValue Property="Label" String="General Information"/>
                         </Record>
                     </Collection>
