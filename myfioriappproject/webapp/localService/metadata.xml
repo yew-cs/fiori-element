@@ -143,13 +143,13 @@
 
             <Association Name="FK_Supplier_ContactPerson">
                 <End Multiplicity="0..1" Role="Supplier" Type="SalesModel.Supplier"/>
-                <End Multiplicity="*" Role="ContactPerson" Type="SalesModel.ContactPerson"/>
+                <End Multiplicity="1..*" Role="ContactPerson" Type="SalesModel.ContactPerson"/>
                 <ReferentialConstraint>
                     <Principal Role="Supplier">
-                        <PropertyRef Name="Id"/>
+                        <PropertyRef Name="ContactPersonId"/>
                     </Principal>
                     <Dependent Role="ContactPerson">
-                        <PropertyRef Name="ContactPersonId"/>
+                        <PropertyRef Name="Id"/>
                     </Dependent>
                 </ReferentialConstraint>
             </Association>
@@ -196,7 +196,6 @@
                         </Record>
                         <Record Type="UI.DataFieldForAnnotation">
                             <PropertyValue Property="Label" String="Contact Name" />
-                            <!-- <PropertyValue Property="Value" Path="ContactName" /> -->
                             <PropertyValue Property="Target" AnnotationPath="ToContactPersons/@Communication.Contact" />
                         </Record>
                         <Record Type="UI.DataField">
@@ -314,23 +313,27 @@
                 </Annotation>
             </Annotations>
 
-            <Annotations Target="SalesModel.ContactPerson">
+            <!-- Annotation for ContactPerson -->
+
+            <Annotations Target="SalesModel.ContactPerson"
+                xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Communication.Contact">
                     <Record>
-                        <PropertyValue Property="fn" Path="Name" />
+                        <PropertyValue Property="fn" Path="Name"/>
+                        <PropertyValue Property="role" Path="Title"/>
                         <PropertyValue Property="tel">
                             <Collection>
                                 <Record>
-                                    <PropertyValue Property="type" EnumMember="Communication.PhoneType/preferred Communication.PhoneType/work" />
-                                    <PropertyValue Property="uri" Path="Phone" />
+                                    <PropertyValue Property="type" EnumMember="Communication.PhoneType/work Communication.PhoneType/preferred"/>
+                                    <PropertyValue Property="uri" Path="Phone"/>
                                 </Record>
                             </Collection>
                         </PropertyValue>
                         <PropertyValue Property="email">
                             <Collection>
                                 <Record>
-                                    <PropertyValue Property="type" EnumMember="Communication.ContactInformationType/work Communication.ContactInformationType/preferred" />
-                                    <PropertyValue Property="address" Path="Email" />
+                                    <PropertyValue Property="type" EnumMember="Communication.ContactInformationType/preferred Communication.ContactInformationType/work"/>
+                                    <PropertyValue Property="address" Path="Email"/>
                                 </Record>
                             </Collection>
                         </PropertyValue>
