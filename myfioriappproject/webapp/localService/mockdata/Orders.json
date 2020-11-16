@@ -1,0 +1,54 @@
+[
+    {
+        "Id": 438,
+        "CustomerName": "Sarah Jackson",
+        "ProductID": 1,
+        "OrderDate": "\/Date(967819083000)\/",
+        "ShippedDate": "\/Date(1114267083000)\/",
+        "ShipVia": "Poslaju",
+        "Product": {
+            "__deferred": {
+                "uri": "https://services.odata.org/V2/Northwind/Northwind.svc/Orders(438)/Product"
+            }
+        }
+    },
+    {
+        "Id": 734,
+        "CustomerName": "Jane Waldorf",
+        "ProductID": 1,
+        "OrderDate": "\/Date(1264171083000)\/",
+        "ShippedDate": "\/Date(1509201483000)\/",
+        "ShipVia": "Poslaju",
+        "Product": {
+            "__deferred": {
+                "uri": "https://services.odata.org/V2/Northwind/Northwind.svc/Products(734)/Product"
+            }
+        }
+    },
+    {
+        "Id": 979,
+        "CustomerName": "Lisa Waldorf",
+        "ProductID": 1,
+        "OrderDate": "\/Date(1149172683000)\/",
+        "ShippedDate": "\/Date(1224686283000)\/",
+        "ShipVia": "DHL",
+        "Product": {
+            "__deferred": {
+                "uri": "https://services.odata.org/V2/Northwind/Northwind.svc/Products(979)/Product"
+            }
+        }
+    },
+    {
+        "Id": 630,
+        "CustomerName": "Ryan Rynold",
+        "ProductID": 1,
+        "OrderDate": "\/Date(1190126283000)\/",
+        "ShippedDate": "\/Date(1157726283000)\/",
+        "ShipVia": "Poslaju",
+        "Product": {
+            "__deferred": {
+                "uri": "https://services.odata.org/V2/Northwind/Northwind.svc/Products(630)/Product"
+            }
+        }
+    }
+]
