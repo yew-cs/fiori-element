@@ -322,6 +322,7 @@
                     <Record>
                         <PropertyValue Property="fn" Path="Name"/>
                         <PropertyValue Property="role" Path="Title"/>
+                        <PropertyValue Property="photo" Path="ImagePath"/>
                         <PropertyValue Property="tel">
                             <Collection>
                                 <Record>
@@ -466,6 +467,13 @@
             <!-- Annotation for LogoPath  -->
 
             <Annotations Target="SalesModel.Supplier/LogoPath"
+                xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="UI.IsImageURL" />
+            </Annotations>
+
+             <!-- Annotation for ImagePath  -->
+
+            <Annotations Target="SalesModel.ContactPerson/ImagePath"
                 xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="UI.IsImageURL" />
             </Annotations>

@@ -5,7 +5,7 @@
         "Title": "Purchasing Manager",
         "Email": "charlotte@gmail.com",
         "Phone": "0171234567",
-        "ImagePath": "person101.jpg",
+        "ImagePath":"/images/contactPerson/person101.png",
         "__metadata": {
             "uri": "ContactPersons(101)",
             "type": "SalesModel.ContactPersons"
@@ -17,7 +17,7 @@
         "Title": "Order Administrator",
         "Email": "shelley@gmail.com",
         "Phone": "0171234567",
-        "ImagePath": "person102.jpg",
+        "ImagePath":"/images/contactPerson/person102.jpg",
         "__metadata": {
             "uri": "ContactPersons(102)",
             "type": "SalesModel.ContactPersons"
@@ -29,7 +29,7 @@
         "Title": "Sales Representative",
         "Email": "regina@gmail.com",
         "Phone": "0171234567",
-        "ImagePath": "person103.jpg",
+        "ImagePath":"/images/contactPerson/person103.jpg",
         "__metadata": {
             "uri": "ContactPersons(103)",
             "type": "SalesModel.ContactPersons"
@@ -41,7 +41,7 @@
         "Title": "Marketing Manager",
         "Email": "yoshi@gmail.com",
         "Phone": "0171234567",
-        "ImagePath": "person104.jpg",
+        "ImagePath":"/images/contactPerson/person104.jpg",
         "__metadata": {
             "uri": "ContactPersons(104)",
             "type": "SalesModel.ContactPersons"
@@ -53,7 +53,7 @@
         "Title": "Export Administrator",
         "Email": "antonio@gmail.com",
         "Phone": "0171234567",
-        "ImagePath": "person105.jpg",
+        "ImagePath":"/images/contactPerson/person105.jpg",
         "__metadata": {
             "uri": "ContactPersons(105)",
             "type": "SalesModel.ContactPersons"
