@@ -449,14 +449,14 @@
                     </Record>
                 </Annotation>
             </Annotations>
-            <Annotations Target="SalesModel.SalesEntities/Suppliers"
+            <!-- <Annotations Target="SalesModel.SalesEntities/Suppliers"
                 xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Capabilities.UpdateRestrictions">
                     <Record Type="Capabilities.UpdateRestrictionsType">
                         <PropertyValue Property="Updatable" Bool="false"/>
                     </Record>
                 </Annotation>
-            </Annotations>
+            </Annotations> -->
             <Annotations Target="SalesModel.SalesEntities/Suppliers"
                 xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Capabilities.DeleteRestrictions">
