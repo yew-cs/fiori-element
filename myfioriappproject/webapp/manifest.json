@@ -1,7 +1,7 @@
 {
     "_version": "1.8.0",
     "sap.app": {
-        "id": "com.myfioriappproject",
+        "id": "com.rizing.myfioriappproject",
         "type": "application",
         "i18n": "i18n/i18n.properties",
         "applicationVersion": {
@@ -110,12 +110,21 @@
                             "className": "sap.ui.core.Fragment",
                             "fragmentName": "com.rizing.myfioriappproject.ext.fragment.CustomFilterExtension",
                             "type": "XML"
+                        },
+                        "ResponsiveTableColumnsExtension|Suppliers": {
+                            "className": "sap.ui.core.Fragment",
+                            "fragmentName": "com.rizing.myfioriappproject.ext.fragment.ListReportResponsiveTableColumns",
+                            "type": "XML"
+                        },
+                        "ResponsiveTableCellsExtension|Suppliers": {
+                            "className": "sap.ui.core.Fragment",
+                            "fragmentName": "com.rizing.myfioriappproject.ext.fragment.ListReportResponsiveTableCells",
+                            "type": "XML"
                         }
                     }
                 },
                 "sap.ui.controllerExtensions": {
                     "sap.suite.ui.generic.template.ListReport.view.ListReport": {
-                        "controllerName": "com.rizing.myfioriappproject.ext.controller.ListReportExtension",
                         "controllerName": "com.rizing.myfioriappproject.ext.controller.ListReportExtension",
                         "sap.ui.generic.app": {
                             "Suppliers": {
