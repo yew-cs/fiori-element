@@ -5,7 +5,7 @@
         xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
         <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
     </edmx:Reference>
-      <edmx:Reference Uri="https://github.com/oasis-tcs/odata-vocabularies/blob/master/vocabularies/Org.OData.Core.V1.md"
+    <edmx:Reference Uri="https://github.com/oasis-tcs/odata-vocabularies/blob/master/vocabularies/Org.OData.Core.V1.md"
         xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
         <edmx:Include Namespace="Org.OData.Core.V1" Alias="Core"/>
     </edmx:Reference>
@@ -213,6 +213,9 @@
                         <Record Type="UI.DataField">
                             <PropertyValue Property="Value" Path="Phone" />
                         </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Value" Path="TotalSales"/>
+                        </Record>
                     </Collection>
                 </Annotation>
 
@@ -409,7 +412,7 @@
             <Annotations Target="SalesModel.Supplier/Website"
                 xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Common.Label" String="Website" />
-                 <Annotation Term="Core.IsURL" Bool="true" />
+                <Annotation Term="Core.IsURL" Bool="true" />
             </Annotations>
             <Annotations Target="SalesModel.Supplier/Category"
                 xmlns="http://docs.oasis-open.org/odata/ns/edm">
@@ -430,6 +433,10 @@
             <Annotations Target="SalesModel.Supplier/CountryId"
                 xmlns="http://docs.oasis-open.org/odata/ns/edm">
                 <Annotation Term="Common.Label" String="Country" />
+            </Annotations>
+             <Annotations Target="SalesModel.Supplier/TotalSales"
+                xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.Label" String="Total Sales" />
             </Annotations>
 
             <!-- Disabled the Create, Update and Delete features for Suppliers  -->
